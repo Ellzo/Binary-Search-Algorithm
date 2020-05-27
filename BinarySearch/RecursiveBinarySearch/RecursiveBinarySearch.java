@@ -13,7 +13,6 @@ public class RecursiveBinarySearch{
       //Assign mid elment to the middle element between
       //low and high
       mid = low/2 + high/2;
-      System.out.println(mid);
       
       //If the element at the mid index equals num,
       //then it's found and return it
@@ -66,9 +65,9 @@ public class RecursiveBinarySearch{
         System.out.println("Number found at index: "+ index);
       }
       
-    //Catch InputMismatchException error
+    //Catch InputMismatchException error.
     //The exception is thrown when the user
-    //enter a non-integer value
+    //enters a non-integer value
     }catch(InputMismatchException e){
       //Notify the user to enter an integer
       System.out.println("The item must be an integer, try again..");
