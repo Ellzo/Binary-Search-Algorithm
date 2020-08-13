@@ -16,6 +16,8 @@ public class RotationNumBinarySearch{
          array[i] = s.nextInt();
       }
       
+      System.out.println();
+      
       System.out.println("Number of rotations: " + countRotations(array));
       
       s.close();
@@ -26,15 +28,19 @@ public class RotationNumBinarySearch{
       int high = array.length - 1;
       int mid;
       
-      while(array[low] > array[high]){
+      while(low <= high){
+         if(array[low] <= array[high])
+            return low;
+            
          mid = (low + high)/2;
-         if(array[mid] < array[mid-1] && array[mid] < array[mid+1]){
+         
+         if(array[mid] < array[mid + 1] && array[mid] < array[mid - 1])
             return mid;
-         }else if(array[mid] > array[mid-1]){
-            low = mid + 1;
-         }else{
+            
+         else if(array[mid] < array[low])
             high = mid - 1;
-         }
+         else
+            low = mid + 1;
       }
       
       return low;
